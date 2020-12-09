@@ -1,12 +1,17 @@
 <header>
-    <div class="container head-container">
-        <div class="row">
-            <div class="col-2 appname">
+    <div class="container head-container d-flex">
+        <!-- <div class="row"> -->
+<!--             <div class="col-md-2 appname">
                 {{ config('app.name', 'Laravel') }}
+            </div> -->
+        <div class="headsearch d-flex justify-content-stretch">
+            <div class="headsearch-input pl-2">
+                <input type="text" name="headsearch" id="hs-input" placeholder="Поиск...">
             </div>
-            <div class="col-10 headsearch">
-                <input type="text">
+            <div class="headsearch-button">
+                <i class="fa fa-search fa-lg"></i>
             </div>
         </div>
+        <!-- </div> -->
     </div>
 </header>

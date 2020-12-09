@@ -10911,6 +10911,7 @@ a.text-dark:focus {
 #app {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  font-size: 14px;
 }
 
 header {
@@ -10920,5 +10921,107 @@ header {
 .head-container {
   color: #fff;
   height: 40px;
+}
+
+.headsearch {
+  width: 90%;
+}
+
+.headsearch-input {
+  width: 90%;
+}
+
+#hs-input {
+  background-color: #222222;
+  border: none;
+  border-bottom: 2px solid #777777;
+  outline: none;
+  line-height: 28px;
+  margin-top: 5px;
+  margin-right: 10px;
+  width: 880px;
+}
+
+.headsearch-button {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+footer {
+  background-color: #222222;
+  margin-top: 100px;
+}
+
+.foot-container {
+  height: 40px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.welcome-top {
+  height: 350px;
+  background: url(/images/top_bckgr.jpg?98061d5355c8578d40d75646defd1ce3) no-repeat 50% 100%;
+  background-size: cover;
+  color: #fff;
+}
+
+.welcome-top-maintitle {
+  font-size: 70px;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 600;
+}
+
+.welcome-about {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.about-items {
+  width: 300px;
+}
+
+.about-img {
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  background-image: url(/images/top_icon.png?204bf3dfff2e1c31dddd27987a31e21b);
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.about-img-popular {
+  background-position: 0 0;
+}
+
+.about-img-online {
+  background-position: -209px 0;
+}
+
+.about-img-srch {
+  background-position: -105px 0;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.welcome-writers-title {
+  margin-top: 80px;
+  font-size: 40px;
 }
 
