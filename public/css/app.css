@@ -10903,3 +10903,22 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: Philosopher;
+  src: url(/fonts/Philosopher.otf?8b5fa9e7c33f709b87674b271b34cab4) format("opentype");
+}
+
+#app {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+header {
+  background-color: #222222;
+}
+
+.head-container {
+  color: #fff;
+  height: 40px;
+}
+

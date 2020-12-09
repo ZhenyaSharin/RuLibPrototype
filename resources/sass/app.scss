@@ -6,3 +6,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: Philosopher;
+    src: url("resources/fonts/Philosopher.otf") format("opentype");
+}
+
+#app {
+    font-family: $mainFont;
+    color: $mainFontColor;
+}
+
+header {
+    background-color: $headerDark;
+}
+
+.head-container {
+    color: #fff;
+    height: 40px;
+}
