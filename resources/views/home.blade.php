@@ -42,11 +42,59 @@
     </div>
     <div class="welcome-writers">
         <div class="container d-flex flex-column align-items-center py-4">
-            <div class="welcome-writers-desc">
+            <div class="welcome-writers-desc mt-4">
                 На нашем портале Вы найдете все лучшие произведение русских классиков. Это наш литературный гений, это бесценное наследство на все нынешние и грядущие поколения. Погрузитесь в мир классической литературы и откройте для себя неоценимое творческое великолепие великих умов нашей истории.
             </div>
+            <hr class="welcome-hr" />
             <div class="welcome-writers-title">
                 Писатели
+            </div>
+            <div class="welcome-writers-list d-flex justify-content-center flex-wrap">
+                <div class="writer-item">
+                    <div class="writer-item-img d-flex justify-content-center">
+                        <a href="/dostoevskiy">
+                            <img src="img/authors/dostoevskiy.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="writer-item-orangeline"></div>
+                    <div class="writer-item-name">
+                        Достоевский Ф.М.
+                    </div>
+                    <div class="writer-item-link">
+                        <a href="/dostoevskiy">
+                            <div class="item-link-green">
+                                перейти
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="welcome-hr" />
+            <div class="welcome-books-title">
+                Книги
+            </div>
+            <div class="welcome-books-list d-flex justify-content-center flex-wrap">
+                <div class="book-item">
+                    <div class="book-item-img d-flex justify-content-center">
+                        <a href="/prestuplenie_i_nakazanie">
+                            <img src="img/bookfiles/prestuplenie_i_nakazanie.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="book-item-orangeline"></div>
+                    <div class="writer-item-name">
+                        Достоевский Ф.М.
+                    </div>
+                    <div class="book-item-name">
+                        Преступление и наказание
+                    </div>
+                    <div class="book-item-link">
+                        <a href="/dostoevskiy">
+                            <div class="item-link-green">
+                                Читать
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
