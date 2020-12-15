@@ -51,4 +51,30 @@ class BookRepository implements BookRepositoryInterface
             throw new DatabaseException($e->getMessage());
         }
     }
+
+    public function getBooksByAuthorId(int $id)
+    {
+        try {
+            $pdo = DB::connection()->getPDO();
+            $pdo->beginTransaction();
+            $stm = $pdo->prepare('SELECT * FROM "GetBookByAuthorId"(:FltAuthorId)');
+            $stm->bindValue("FltAuthorId", $id);
+            $stm->execute();
+            $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
+            $stm2 = $pdo->prepare('SELECT "Last_name", "First_name", "Middle_name", "Link" FROM "GetAuthorById"(:FltId)');
+            foreach ($result as &$item) {
+                $stm2->bindValue("FltId", $item['AuthorId']);
+                $stm2->execute();
+                $author = $stm2->fetch(\PDO::FETCH_ASSOC);
+                $item['Author'] = $author;
+            }
+            $pdo->commit();
+            return $result;
+        } catch (\PDOException | Throwable $e) {
+            if ($pdo && $pdo->inTransaction()) {
+                $pdo->rollback();
+            }
+            throw new DatabaseException($e->getMessage());
+        }
+    }
 }

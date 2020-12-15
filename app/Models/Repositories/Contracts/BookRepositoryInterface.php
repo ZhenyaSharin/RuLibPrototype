@@ -6,5 +6,7 @@ interface BookRepositoryInterface
 {
     public function list();
 
+    public function getBooksByAuthorId(int $id);
+
     public function demoBooks();
 }

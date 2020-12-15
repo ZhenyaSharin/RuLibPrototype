@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\BusinessLogic\AuthorLogic;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
@@ -17,6 +18,12 @@ class AuthorController extends Controller
     public function getAllAuthors()
     {
         $result = $this->authorLogic->getAllAuthors();
+        return response()->json(["error" => "0", "result" => $result]);
+    }
+
+    public function getSomeAuthors(Request $request)
+    {
+        $result = $this->authorLogic->getSomeAuthors($request->id);
         return response()->json(["error" => "0", "result" => $result]);
     }
 }

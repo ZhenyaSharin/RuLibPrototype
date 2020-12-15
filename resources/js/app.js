@@ -23,6 +23,7 @@ window.flash = function(message) {
 import VueRouter from 'vue-router'; 
 // import Flash from './components/Flash.vue';
 import Welcome from './components/Welcome.vue';
+import AuthorProfile from './components/AuthorProfile.vue';
 
 
 /**
@@ -40,6 +41,7 @@ window.Vue.use(VueRouter);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('vue-welcome', Welcome);
+Vue.component('vue-author-profile', AuthorProfile);
 
 
 /**
@@ -50,7 +52,12 @@ Vue.component('vue-welcome', Welcome);
 const routes = [
     {
         path: '/',
+        name: 'home',
         component: Welcome
+    },
+    {
+        path: '/authors/',
+        component: AuthorProfile
     }
 ]
 

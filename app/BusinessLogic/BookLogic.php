@@ -28,4 +28,17 @@ class BookLogic
             throw new BusinessLogicException($e->getMessage());
         }
     }
+
+    public function getAuthorsBooks($id)
+    {
+        try {
+            $result = $this->books->getBooksByAuthorId($id);
+            return $result;
+        } catch (Throwable $e) {
+            if ($e instanceof DatabaseException) {
+                throw new DatabaseException('DatabaseException');
+            }
+            throw new BusinessLogicException($e->getMessage());
+        }
+    }
 }

@@ -20,4 +20,11 @@ class BookController extends Controller
         $result = $this->bookLogic->getSomeBooks();
         return response()->json(["error" => "0", "result" => $result]);
     }
+
+    public function getAuthorsBooks(Request $request)
+    {
+        $id = $request->id;
+        $result = $this->bookLogic->getAuthorsBooks($id);
+        return response()->json(["error" => "0", "result" => $result]);
+    }
 }

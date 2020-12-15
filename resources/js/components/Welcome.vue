@@ -50,8 +50,8 @@
                 <div class="welcome-writers-list d-flex justify-content-center flex-wrap">
                     <div v-for="author in authors" class="writer-item d-flex flex-column justify-content-end">
                         <div class="writer-item-img d-flex justify-content-center align-items-center">
-                            <a :href="'/'+ author.Link">
-                                <img :src="author.Image" :alt="author.Last_name">
+                            <a :href="'/authors/'+ author.Link">
+                                <img :src="author.Image" :alt="author.Last_name + '- портрет'">
                             </a>
                         </div>
                         <div class="writer-item-orangeline"></div>
@@ -59,7 +59,7 @@
                             {{ makeWithInitials(author.Last_name, author.First_name, author.Middle_name) }}
                         </div>
                         <div class="writer-item-link">
-                            <a :href="'/'+ author.Link">
+                            <a :href="'/authors/'+ author.Link">
                                 <div class="item-link-green">
                                     перейти
                                 </div>
@@ -75,7 +75,7 @@
                     <div class="book-item" v-for="book in books">
                         <div class="book-item-img d-flex justify-content-center">
                             <a :href="'/'+ book.Link">
-                                <img :src="book.Image" :alt="book.Title">
+                                <img :src="book.Image" :alt="book.Title + '- обложка'">
                             </a>
                         </div>
                         <div class="book-item-orangeline"></div>
@@ -94,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="welcome-hr" />
                 <div class="morebooks">
                     <a href="#">
                         <div class="morebooks-btn">

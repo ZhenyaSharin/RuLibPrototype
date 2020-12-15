@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/authors/{name}', [
+    'uses' => 'AuthorController@index',
+])->where('name', '[A-Za-z-]+');
+
 // Route::get('/home', 'HomeController@index')->name('home');
