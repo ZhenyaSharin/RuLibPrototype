@@ -167,7 +167,8 @@ footer {
     background-color: #fff;
     margin-top: 30px;
     box-shadow: $shadowBigBorder;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
+    margin: 30px 10px;
 }
 
 .writer-item:hover,
@@ -231,3 +232,30 @@ footer {
     text-align: center;
     text-transform: uppercase;
 }
+
+.morebooks {
+    margin: 50px auto 15px;
+}
+
+.morebooks a,
+.morebooks a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.morebooks-btn {
+    font-size: 16px; 
+    text-transform: uppercase;
+    background-color: $greenLink;
+    padding: 10px 0;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+}
+
+.morebooks-btn:hover {
+    background-color: $darkGreen;
+}
+

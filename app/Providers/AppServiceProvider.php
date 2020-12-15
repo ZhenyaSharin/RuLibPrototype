@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('App\Models\Repositories\Contracts\AuthorRepositoryInterface', 'App\Models\Repositories\AuthorRepository');
+        $this->app->bind('App\Models\Repositories\Contracts\BookRepositoryInterface', 'App\Models\Repositories\BookRepository');
     }
 
     /**
@@ -23,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        date_default_timezone_set('Europe/Moscow');
     }
 }

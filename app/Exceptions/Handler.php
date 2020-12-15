@@ -2,7 +2,12 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
+use Throwable;
+use \App\Exceptions\BusinessLogicException;
+use \App\Exceptions\DatabaseException;
 
 class Handler extends ExceptionHandler
 {
@@ -30,8 +35,35 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
+    public function report(Throwable $exception)
+    {
+        parent::report($exception);
+    }
+
     public function register()
     {
         //
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof ValidationException) {
+            return response()->json(["error" => "1", "error_message" => $exception->errors()]);
+        } elseif ($exception instanceof DatabaseException) {
+            return response()->json(["error" => "2", "error_message" => $exception->errors()]);
+        } elseif ($exception instanceof BusinessLogicException) {
+            return response()->json(["error" => "3", "error_message" => $exception->errors()]);
+        } else {
+            return response()->json(["error" => "4", "error_message" => $exception->getMessage()]);
+        }
+
+        return parent::render($request, $exception);
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return $request->expectsJson()
+        ? response()->json(['message' => $exception->getMessage()], 401)
+        : redirect()->guest($exception->redirectTo() ?? route('login'));
     }
 }
