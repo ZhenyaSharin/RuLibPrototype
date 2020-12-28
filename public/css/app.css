@@ -10908,6 +10908,10 @@ a.text-dark:focus {
   src: url(/fonts/Philosopher.otf?8b5fa9e7c33f709b87674b271b34cab4) format("opentype");
 }
 
+body {
+  position: relative;
+}
+
 #app {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -10970,7 +10974,7 @@ footer {
 }
 
 .foot-container {
-  height: 40px;
+  min-height: 40px;
   font-size: 12px;
   color: #fff;
 }
@@ -10996,6 +11000,11 @@ footer {
   font-size: 70px;
   font-family: "Philosopher", sans-serif;
   font-weight: 600;
+  text-align: center;
+}
+
+.welcome-top-subtitle {
+  text-align: center;
 }
 
 .welcome-about {
@@ -11163,5 +11172,60 @@ footer {
   width: 300px;
   height: 300px;
   margin: 20px auto 10px;
+}
+
+.button-up {
+  background-color: #222222;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1200px) {
+  #app {
+    font-size: 12px;
+  }
+
+  #hs-input {
+    width: 480px;
+  }
+
+  .welcome-top {
+    height: 250px;
+  }
+
+  .welcome-top-maintitle {
+    font-size: 48px;
+  }
+
+  .about-text,
+  .welcome-writers-desc {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-top-maintitle {
+    font-size: 32px;
+  }
+
+  #hs-input {
+    width: 280px;
+  }
+
+  .welcome-top {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #hs-input {
+    width: 180px;
+  }
 }
 

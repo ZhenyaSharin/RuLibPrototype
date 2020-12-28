@@ -26,4 +26,11 @@ class AuthorController extends Controller
         $result = $this->authorLogic->getSomeAuthors($request->id);
         return response()->json(["error" => "0", "result" => $result]);
     }
+
+    public function getAuthorByName(Request $request)
+    {
+        $name = $request->name;
+        $result = $this->authorLogic->getAuthor($name);
+        return response()->json(["error" => "0", "result" => $result]);
+    }
 }

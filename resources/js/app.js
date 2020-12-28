@@ -24,6 +24,9 @@ import VueRouter from 'vue-router';
 // import Flash from './components/Flash.vue';
 import Welcome from './components/Welcome.vue';
 import AuthorProfile from './components/AuthorProfile.vue';
+import AuthorItem from './components/items/AuthorItem.vue';
+import BookItem from './components/items/BookItem.vue';
+import SomeBookItem from './components/items/SomeBookItem.vue';
 
 
 /**
@@ -42,6 +45,9 @@ window.Vue.use(VueRouter);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('vue-welcome', Welcome);
 Vue.component('vue-author-profile', AuthorProfile);
+Vue.component('vue-author-item', AuthorItem);
+Vue.component('vue-book-item', BookItem);
+Vue.component('vue-some-book-item', SomeBookItem);
 
 
 /**
@@ -62,6 +68,11 @@ const routes = [
 ]
 
 const router = new VueRouter({ routes })
+
+// export default new VueRouter({
+//     mode: history,
+//     routes
+// });
 
 
 const vm = new Vue({

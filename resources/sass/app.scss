@@ -12,6 +12,10 @@
     src: url("resources/fonts/Philosopher.otf") format("opentype");
 }
 
+body {
+    position: relative;
+}
+
 #app {
     font-family: $mainFont;
     color: $mainFontColor;
@@ -74,7 +78,7 @@ footer {
 }
 
 .foot-container {
-    height: 40px;
+    min-height: 40px;
     font-size: 12px;
     color: #fff;
 }
@@ -107,8 +111,12 @@ footer {
     font-size: 70px;
     font-family: $mainTitleFont;
     font-weight: 600;
+    text-align: center;
 }
 
+.welcome-top-subtitle {
+    text-align: center;
+}
 
 .welcome-about {
     background-color: #fff;
@@ -277,3 +285,57 @@ footer {
     margin: 20px auto 10px;
 }
 
+.button-up {
+    background-color: $headerDark;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1200px) {
+    #app {
+        font-size: 12px;
+    }
+
+    #hs-input {
+        width: 480px;
+    }
+
+    .welcome-top {
+        height: 250px;
+    }
+
+    .welcome-top-maintitle {
+        font-size: 48px;
+    }
+
+    .about-text,
+    .welcome-writers-desc {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .welcome-top-maintitle {
+        font-size: 32px;
+    }
+
+    #hs-input {
+        width: 280px;
+    }
+
+    .welcome-top {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #hs-input {
+        width: 180px;
+    }
+}

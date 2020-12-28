@@ -35,3 +35,7 @@ Route::post('/getsomeanotherauthors', [
 Route::post('/getauthorsbooks', [
     'uses' => 'BookController@getAuthorsBooks',
 ]);
+
+Route::post('/getauthorbyname', [
+    'uses' => 'AuthorController@getAuthorByName',
+]);

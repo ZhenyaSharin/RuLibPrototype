@@ -1,6 +1,6 @@
 <template>
     <div class="welcome-main">
-        <div class="welcome-top d-flex flex-column justify-content-center align-items-center">
+        <div class="welcome-top d-flex flex-column justify-content-center align-items-center p-4">
             <span class="welcome-top-maintitle">
                 Библиотека русской классики
             </span>
@@ -10,8 +10,8 @@
         </div>
         <div class="welcome-about">
             <div class="container d-flex justify-content-center">
-                <div class="welcome-about-item d-flex justify-content-between">
-                    <div class="about-items d-flex flex-column align-items-center">
+                <div class="row welcome-about-item d-flex justify-content-md-between justify-content-center">
+                    <div class="col-lg-4 col-sm-12 px-2 py-4 about-items d-flex flex-column align-items-center">
                         <div class="about-img about-img-popular">
                             
                         </div>
@@ -19,7 +19,7 @@
                             Самые популярные произведения русских классиков
                         </div>
                     </div>
-                    <div class="about-items d-flex flex-column align-items-center">
+                    <div class="col-lg-4 col-sm-12 p-0 py-4 about-items d-flex flex-column align-items-center">
                         <div class="about-img about-img-online">
                             
                         </div>
@@ -27,7 +27,7 @@
                             Чтение произведений онлайн, без скачивания, без регистрации
                         </div>
                     </div>
-                    <div class="about-items d-flex flex-column align-items-center">
+                    <div class="col-lg-4 col-sm-12 p-0 py-4 about-items d-flex flex-column align-items-center">
                         <div class="about-img about-img-srch">
                             
                         </div>
@@ -48,51 +48,14 @@
                     Писатели
                 </div>
                 <div class="welcome-writers-list d-flex justify-content-center flex-wrap">
-                    <div v-for="author in authors" class="writer-item d-flex flex-column justify-content-end">
-                        <div class="writer-item-img d-flex justify-content-center align-items-center">
-                            <a :href="'/authors/'+ author.Link">
-                                <img :src="author.Image" :alt="author.Last_name + '- портрет'">
-                            </a>
-                        </div>
-                        <div class="writer-item-orangeline"></div>
-                        <div class="writer-item-name">
-                            {{ makeWithInitials(author.Last_name, author.First_name, author.Middle_name) }}
-                        </div>
-                        <div class="writer-item-link">
-                            <a :href="'/authors/'+ author.Link">
-                                <div class="item-link-green">
-                                    перейти
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <vue-author-item v-for="author in authors" :author="author" v-bind:key="author.Id" />
                 </div>
                 <hr class="welcome-hr" />
                 <div class="welcome-books-title">
                     Книги
                 </div>
                 <div class="welcome-books-list d-flex justify-content-center flex-wrap">
-                    <div class="book-item" v-for="book in books">
-                        <div class="book-item-img d-flex justify-content-center">
-                            <a :href="'/'+ book.Link">
-                                <img :src="book.Image" :alt="book.Title + '- обложка'">
-                            </a>
-                        </div>
-                        <div class="book-item-orangeline"></div>
-                        <div class="writer-item-name">
-                            {{ makeWithInitials(book.Author.Last_name, book.Author.First_name, book.Author.Middle_name) }}
-                        </div>
-                        <div class="book-item-name">
-                            {{ book.Title }}
-                        </div>
-                        <div class="book-item-link">
-                            <a :href="'/'+ book.Link">
-                                <div class="item-link-green">
-                                    Читать
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <vue-some-book-item v-for="book in books" :book="book" v-bind:key="book.Id" />
                 </div>
                 <hr class="welcome-hr" />
                 <div class="morebooks">
@@ -141,8 +104,7 @@
                     this.books = response.data.result;
                 });
             },
-            makeWithInitials: function(surname, name, patronymic)
-            {
+            makeWithInitials: function(surname, name, patronymic) {
                 var n;
                 n = name.substr(0, 1).toUpperCase();
                 if (patronymic !== '') {
