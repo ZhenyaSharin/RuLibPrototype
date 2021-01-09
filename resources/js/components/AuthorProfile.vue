@@ -10,17 +10,26 @@
         <div class="author-books-title">
             Произведения автора:
         </div>
-        <div v-if="books.length !== 0" class="welcome-books-list d-flex justify-content-center flex-wrap">
+        <div v-if="loadedBooks==false">
+            <vue-spinner />
+        </div>
+        <div v-else-if="loadedBooks==true&&books.length>0" class="welcome-books-list d-flex justify-content-center flex-wrap">
             <vue-book-item v-for="book in books" :book="book" v-bind:key="book.Id" />
         </div>
-        <div v-else class="author-books-title">
-            Список литературы пока пуст...:(
+        <div v-else-if="loadedBooks==true&&books.length==0">
+            <br/>
+            <h3>
+                Список произведений пока пуст...
+            </h3>
         </div>
         <hr class="welcome-hr" />
         <div class="welcome-books-title">
             Другие писатели
         </div>
-        <div class="welcome-writers-list d-flex justify-content-center flex-wrap">
+        <div v-if="loadedAuthors==false">
+            <vue-spinner />
+        </div>
+        <div v-else-if="loadedAuthors==true" class="welcome-writers-list d-flex justify-content-center flex-wrap">
             <vue-author-item v-for="author in authors" :author="author" v-bind:key="author.Id" />
         </div>
         <hr class="welcome-hr" />
@@ -44,6 +53,8 @@
                 authorJSON: {
                     id: ''
                 },
+                loadedBooks: false,
+                loadedAuthors: false,
             }
         },
         mounted() {
@@ -59,12 +70,14 @@
                 // /getauthorsbooks
                 axios.post('/api/getauthorsbooks', json).then((response) => {
                     this.books = response.data.result;
+                    this.loadedBooks = true;
                 });
             },
             authorsList: function(json) {
                 // let authorJSON = {id: authorid};
                 axios.post('/api/getsomeanotherauthors', json).then((response) => {
                     this.authors = response.data.result;
+                    this.loadedAuthors = true;
                 });
             },
             makeWithInitials: function(surname, name, patronymic) {

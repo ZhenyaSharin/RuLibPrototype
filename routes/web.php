@@ -19,11 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/{name}', [
+Route::get('/authors/{name}', [
     'uses' => 'PageController@index',
 ])->where('name', '[A-Za-z-]+');
 
-Route::get('/{name}/{book}/{page}', [
+Route::get('/authors/{name}/{book}/{page}', [
     'uses' => 'PageController@index',
 ])->where('name', '[A-Za-z-]+')->where('book', '[A-Za-z-1-9]+')->where('page', '[1-9]+');
 

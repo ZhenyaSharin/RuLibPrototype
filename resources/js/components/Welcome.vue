@@ -47,14 +47,20 @@
                 <div class="welcome-writers-title">
                     Писатели
                 </div>
-                <div class="welcome-writers-list d-flex justify-content-center flex-wrap">
+                <div v-if="loadedAuthors==false">
+                    <vue-spinner />
+                </div>
+                <div v-else-if="loadedAuthors==true" class="welcome-writers-list d-flex justify-content-center flex-wrap">
                     <vue-author-item v-for="author in authors" :author="author" v-bind:key="author.Id" />
                 </div>
                 <hr class="welcome-hr" />
                 <div class="welcome-books-title">
                     Книги
                 </div>
-                <div class="welcome-books-list d-flex justify-content-center flex-wrap">
+                <div v-if="loadedBooks==false">
+                    <vue-spinner />
+                </div>
+                <div v-else-if="loadedBooks==true" class="welcome-books-list d-flex justify-content-center flex-wrap">
                     <vue-some-book-item v-for="book in books" :book="book" v-bind:key="book.Id" />
                 </div>
                 <hr class="welcome-hr" />
@@ -76,6 +82,8 @@
         data() {
             return {
                 is_refresh: true,
+                loadedAuthors: false,
+                loadedBooks: false,
                 authors: [],
                 books: []
             }
@@ -97,11 +105,13 @@
             authorsList: function() {
                 axios.post('/api/getallauthors').then((response) => {
                     this.authors = response.data.result;
+                    this.loadedAuthors = true;
                 });
             },
             randomBookList: function() {
                 axios.post('/api/getsomebooks').then((response) => {
                     this.books = response.data.result;
+                    this.loadedBooks = true;
                 });
             },
             makeWithInitials: function(surname, name, patronymic) {

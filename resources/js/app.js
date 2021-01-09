@@ -27,6 +27,7 @@ import AuthorProfile from './components/AuthorProfile.vue';
 import AuthorItem from './components/items/AuthorItem.vue';
 import BookItem from './components/items/BookItem.vue';
 import SomeBookItem from './components/items/SomeBookItem.vue';
+import Spinner from './components/Spinner.vue';
 
 
 /**
@@ -48,6 +49,7 @@ Vue.component('vue-author-profile', AuthorProfile);
 Vue.component('vue-author-item', AuthorItem);
 Vue.component('vue-book-item', BookItem);
 Vue.component('vue-some-book-item', SomeBookItem);
+Vue.component('vue-spinner', Spinner);
 
 
 /**

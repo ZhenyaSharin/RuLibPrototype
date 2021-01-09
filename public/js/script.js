@@ -1,3 +1,17 @@
 $(window).on("load", function() {
-    $("a[rel='m_PageScroll2id']").mPageScroll2id();
+    $(".button-up").mPageScroll2id();
+
+    // $("a[href*='#']").mPageScroll2id({
+    //     offset: 220
+    // });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('.button-up').css('visibility', 'visible')
+                           .css('bottom', '60px');
+
+        } else {
+            $('.button-up').css('visibility', 'hidden')
+                           .css('bottom', '-70px');
+        }
+    });
 });

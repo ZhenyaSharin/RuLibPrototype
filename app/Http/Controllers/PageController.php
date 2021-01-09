@@ -21,17 +21,13 @@ class PageController extends Controller
     public function index($name)
     {
         $author = $this->authorLogic->getAuthor($name);
-        if ($author['error'] == 0) {
-            return view('author', compact('author'));
-        } else {
-            return view('error404');
-        }
+        return view('author', compact('author'));
     }
 
     public function booking($name, $book)
     {
         $author = $this->authorLogic->getAuthor($name);
-        $book = 
+        $book = $this->bookLogic->getBook($name);
         return view('author', compact('author'));
     }
 }
