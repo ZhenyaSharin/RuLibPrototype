@@ -8,6 +8,8 @@ use Illuminate\Validation\ValidationException;
 use Throwable;
 use \App\Exceptions\BusinessLogicException;
 use \App\Exceptions\DatabaseException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class Handler extends ExceptionHandler
 {
@@ -53,6 +55,8 @@ class Handler extends ExceptionHandler
             return response()->json(["error" => "2", "error_message" => $exception->errors()]);
         } elseif ($exception instanceof BusinessLogicException) {
             return response()->json(["error" => "3", "error_message" => $exception->errors()]);
+        } elseif ($exception instanceof NotFoundHttpException) {
+            return redirect('/pagenotfound');
         } else {
             return response()->json(["error" => "4", "error_message" => $exception->getMessage()]);
         }
