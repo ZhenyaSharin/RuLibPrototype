@@ -10993,6 +10993,7 @@ footer {
   height: 350px;
   background: url(/images/top_bckgr.jpg?98061d5355c8578d40d75646defd1ce3) no-repeat 50% 100%;
   background-size: cover;
+  background-attachment: fixed;
   color: #fff;
 }
 
