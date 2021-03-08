@@ -1,26 +1,38 @@
 <header id="top">
     <div class="container head-container d-flex">
-        <!-- <div class="row"> -->
-<!--             <div class="col-md-2 appname">
-                {{ config('app.name', 'Laravel') }}
-            </div> -->
-        <div class="headsearch d-flex justify-content-stretch">
-            @if (Request::path() == '/')
-            <a href="#" class="headback elem-hidden">
-                <i class="fa fa-arrow-left fa-lg"></i>
-            </a>
-            @else 
-            <a href="{{ url()->previous() }}" class="headback">
-                <i class="fa fa-arrow-left fa-lg"></i>
-            </a>
-            @endif
-            <div class="headsearch-input pl-2">
-                <input type="text" name="headsearch" id="hs-input" placeholder="Поиск...">
+        <div class="headsearch d-flex justify-content-stretch row">
+            <div class="col-3">
+                <a href="/">ЛОГО</a>
             </div>
-            <div class="headsearch-button">
-                <i class="fa fa-search fa-lg"></i>
+            <div class="col-9 d-flex">
+                <nav>
+                    <ul class="headsearch__navul d-flex">
+                        <li>
+                            <a href="#">ПИСАТЕЛИ</a>
+                        </li>
+                        <li>
+                            <a href="#">КНИГИ</a>
+                        </li>
+                        <li>
+                            <a href="#">КОНТАКТЫ</a>
+                        </li>
+                        <li>
+                            <a href="#">ВОЙТИ</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="headsearch-input pl-2">
+                    <input type="text" name="headsearch" id="hs-input" placeholder="Поиск...">
+                </div>
+                <div class="headsearch-button">
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
             </div>
         </div>
-        <!-- </div> -->
+        @if (Request::path() != '/')
+        <a class="getback" href="{{ url()->previous() }}">
+            <i class="fa fa-arrow-left fa-lg"></i>&nbsp;НАЗАД
+        </a>
+        @endif
     </div>
 </header>

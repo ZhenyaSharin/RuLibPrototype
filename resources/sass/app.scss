@@ -28,15 +28,21 @@ header {
 
 .head-container {
     color: #fff;
-    height: 40px;
+    // height: 40px;
+    padding: 10px 0;
+    position: relative;
 }
 
-.headsearch {
-    width: 90%;
-}
+// .headsearch {
+//     width: 90%;
+// }
 
-.headsearch-input {
-    width: 90%;
+// .headsearch-input {
+//     width: 90%;
+// }
+
+.headsearch__navul {
+    list-style: none;
 }
 
 #hs-input {
@@ -306,6 +312,19 @@ a,
 a:hover {
     text-decoration: none;
     color: #fff;
+}
+
+// getback
+
+.getback {
+    position: absolute;
+    background-color: $headerDark;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #dcdcdc;
+    top: 80px;
+    z-index: 100;
 }
 
 @media screen and (max-width: 1200px) {

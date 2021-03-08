@@ -13,7 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="{{url('assets/css/bootstrap.min.css')}}"/>  -->
 
     <!-- Styles -->
@@ -37,6 +37,7 @@
     src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/42d566f993.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.malihu.PageScroll2id.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
 </body>
