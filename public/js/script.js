@@ -1,6 +1,10 @@
 $(window).on("load", function() {
     $(".button-up").mPageScroll2id();
 
+    $(".headsearch__navul a").mPageScroll2id({
+        offset : 50
+    });
+
     // $("a[href*='#']").mPageScroll2id({
     //     offset: 220
     // });

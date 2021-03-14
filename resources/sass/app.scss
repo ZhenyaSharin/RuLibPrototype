@@ -33,16 +33,36 @@ header {
     position: relative;
 }
 
-// .headsearch {
-//     width: 90%;
-// }
+.headsearch {
+    width: 100%;
+}
 
-// .headsearch-input {
-//     width: 90%;
-// }
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.headsearch-input {
+    max-width: 200px;
+}
 
 .headsearch__navul {
     list-style: none;
+    width: 100%;
+}
+
+.headsearch__navul li {
+    margin-left: 10px;
+}
+
+.headsearch__navul a {
+    border-bottom: 2px solid $headerDark;
+    margin-top: 4px;
+    text-transform: $up;
+}
+
+.headsearch__navul a:hover {
+    border-bottom: 2px solid #fff;
 }
 
 #hs-input {
@@ -54,7 +74,7 @@ header {
     line-height: 28px;
     margin-top: 5px;
     margin-right: 10px;
-    width: 880px;
+    // width: 880px;
     color: #fff;
 }
 
@@ -322,7 +342,7 @@ a:hover {
     color: #fff;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 4px #dcdcdc;
+    box-shadow: 0 0 5px #808080;
     top: 80px;
     z-index: 100;
 }
