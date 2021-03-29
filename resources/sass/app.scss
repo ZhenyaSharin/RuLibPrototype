@@ -347,6 +347,50 @@ a:hover {
     z-index: 100;
 }
 
+//Modals
+
+.modalhdr {
+    font-weight: lighter;
+}
+
+.modalhdr div {
+    text-align: center;
+}
+
+#signin__modal {
+    border-radius: 0;
+    // background-color: $body-bg;
+}
+
+.signin__modal-content {
+    border-radius: 0;
+    background-color: $body-bg;
+}
+
+.modalbtn {
+    border-radius: 0;
+    width: 90%;
+    min-width: 180px;
+    padding: 10px;
+    text-transform: $up;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 1px 1px 6px $shadowBigBorder;
+    transition: 0.2s ease-in-out;
+}
+
+.modalbtn:hover {
+    box-shadow: 0;
+}
+
+.modalbtn_reg {
+    background-color: $lightStateGrey;
+}
+
+.modalbtn_log {
+    background-color: $greenLink;
+}
+
 @media screen and (max-width: 1200px) {
     #app {
         font-size: 12px;
