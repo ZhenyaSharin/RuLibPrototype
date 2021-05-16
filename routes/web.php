@@ -24,8 +24,16 @@ Route::get('/authors/{name}', [
 ])->where('name', '[A-Za-z-]+');
 
 Route::get('/authors/{name}/{book}/{page}', [
-    'uses' => 'PageController@index',
-])->where('name', '[A-Za-z-]+')->where('book', '[A-Za-z-1-9]+')->where('page', '[1-9]+');
+    'uses' => 'PageController@booking',
+])->where(
+	['name', '[A-Za-z-]+'], 
+	['book', '[A-Za-z-1-9]+'], 
+	['page', '[1-9]+']
+);
+
+Route::get('/pagenotfound', function () {
+    return view('errors.404');
+});
 
 Route::get('/pagenotfound', function () {
     return view('errors.404');

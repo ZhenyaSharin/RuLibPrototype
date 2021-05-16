@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\BusinessLogic\AuthorLogic;
 use App\BusinessLogic\BookLogic;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
 {
@@ -24,10 +25,11 @@ class PageController extends Controller
         return view('author', compact('author'));
     }
 
-    public function booking($name, $book)
+    public function booking($name, $book, $page)
     {
         $author = $this->authorLogic->getAuthor($name);
-        $book = $this->bookLogic->getBook($name);
-        return view('author', compact('author'));
+        $data = $this->bookLogic->getBookByAuthorIdAndSlug($author["Id"], $book);
+        $text = Storage::get('public/storage/books/'.$data['Link'].'.txt');
+        // return view('book', compact('author', 'book'));
     }
 }

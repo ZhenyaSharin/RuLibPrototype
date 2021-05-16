@@ -41,4 +41,17 @@ class BookLogic
             throw new BusinessLogicException($e->getMessage());
         }
     }
+
+    public function getBookByAuthorIdAndSlug($authorId, $slug)
+    {
+        try {
+            $result = $this->books->getBookBySlug($authorId, $slug);
+            return $result;
+        } catch (Throwable $e) {
+            if ($e instanceof DatabaseException) {
+                throw new DatabaseException('DatabaseException');
+            }
+            throw new BusinessLogicException($e->getMessage());
+        }
+    }
 }

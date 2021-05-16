@@ -9,4 +9,6 @@ interface BookRepositoryInterface
     public function getBooksByAuthorId(int $id);
 
     public function demoBooks();
+
+    public function getBookBySlug(int $authorId, string $slug);
 }

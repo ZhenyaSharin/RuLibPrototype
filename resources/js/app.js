@@ -28,6 +28,7 @@ import AuthorItem from './components/items/AuthorItem.vue';
 import BookItem from './components/items/BookItem.vue';
 import SomeBookItem from './components/items/SomeBookItem.vue';
 import Spinner from './components/Spinner.vue';
+import Book from './components/Book.vue';
 
 
 /**
@@ -50,6 +51,7 @@ Vue.component('vue-author-item', AuthorItem);
 Vue.component('vue-book-item', BookItem);
 Vue.component('vue-some-book-item', SomeBookItem);
 Vue.component('vue-spinner', Spinner);
+Vue.component('vue-book', Book);
 
 
 /**
@@ -66,6 +68,10 @@ const routes = [
     {
         path: '/authors/',
         component: AuthorProfile
+    },
+    {
+        path: '/authors/{name}/{book}/{page}',
+        component: Book
     }
 ]
 
