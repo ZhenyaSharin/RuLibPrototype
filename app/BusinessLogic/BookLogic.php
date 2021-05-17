@@ -5,6 +5,7 @@ namespace App\BusinessLogic;
 use App\Exceptions\BusinessLogicException;
 use App\Exceptions\DatabaseException;
 use App\Models\Repositories\Contracts\BookRepositoryInterface;
+use Illuminate\Support\Facades\Storage;
 use Throwable;
 
 class BookLogic
@@ -42,10 +43,15 @@ class BookLogic
         }
     }
 
-    public function getBookByAuthorIdAndSlug($authorId, $slug)
+    public function getBookByAuthorIdAndSlug($authorId, $name, $slug, $page)
     {
         try {
             $result = $this->books->getBookBySlug($authorId, $slug);
+            $link = $result['Link'];
+            $text = file_get_contents(public_path()."/storage/books/$name/$link.txt");
+            $result['Page'] = $page;
+            $result['Text'] = $text;
+
             return $result;
         } catch (Throwable $e) {
             if ($e instanceof DatabaseException) {

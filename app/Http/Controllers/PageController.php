@@ -25,11 +25,14 @@ class PageController extends Controller
         return view('author', compact('author'));
     }
 
-    public function booking($name, $book, $page)
+    public function booking(string $name, string $book, int $page)
     {
         $author = $this->authorLogic->getAuthor($name);
-        $data = $this->bookLogic->getBookByAuthorIdAndSlug($author["Id"], $book);
-        $text = Storage::get('public/storage/books/'.$data['Link'].'.txt');
+        $data = $this->bookLogic->getBookByAuthorIdAndSlug($author["Id"], $name, $book, $page);
+        // $text = Storage::get('public/storage/books/'.$data['Link'].'.txt');
         // return view('book', compact('author', 'book'));
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
     }
 }
